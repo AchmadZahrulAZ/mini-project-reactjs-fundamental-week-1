@@ -1,3 +1,6 @@
+/* style.css */
+
+/* Existing Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,6 +33,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .margin-navbar {
@@ -45,6 +49,7 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .nav-links li {
@@ -61,6 +66,37 @@ nav {
   color: #ddd;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Active Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Header */
 header {
   background-color: #222831;
@@ -72,10 +108,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .header-text {
   flex: 1;
+  min-width: 250px;
 }
 
 .header-image {
@@ -87,6 +125,8 @@ header {
 
 .header-image img {
   max-width: 300px;
+  width: 100%;
+  height: auto;
 }
 
 .role {
@@ -230,4 +270,84 @@ footer {
 
 .fade-in {
   animation: fadeIn 1s ease-in;
+}
+
+/* Tampilan Responsif untuk tablet dan handphone */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-image {
+    text-align: center;
+    margin: 20px 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .header-image img {
+    max-width: 200px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px; 
+    right: 20px;
+    background-color: #222831;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    max-height: 500px; 
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on tablet and below */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Handphone */
+@media (max-width: 600px) {
+  .header-content {
+    padding: 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    min-width: 100%;
+  }
+
+  .header-image img {
+    max-width: 150px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }

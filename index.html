@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
+    <!--- Meta Tags -->
+    <!-- Untuk penggunaan banyak bahasa -->
     <meta charset="UTF-8" />
+    <!-- Untuk penggunaan tampilan berbagai perangkat -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website | Achmad Zahrul Ali Zadan v1.0</title>
+    <!-- Judul halaman -->
+    <title>Professional Front-End Developer - Achmad Zahrul Ali Zadan</title>
+    <!-- Deskripsi singkat tentang halaman -->
+    <meta name="description" content="I'm a Professional Front-End Developer with expertise in HTML, CSS, and JavaScript. Check out my portfolio and projects." />
+    <!-- Kata kunci yang relevan -->
+    <meta name="keywords" content="Front-End Developer, Web Developer, Portfolio, Proyek, HTML, CSS, JavaScript" />
+    <!-- Penulis halaman -->
+    <meta name="author" content="Achmad Zahrul Ali Zadan" />
+    <!-- Meta Property - digunakan untuk pengoptimalan ketika dibagikan ke media social -->
+    <meta property="og:title" content="Professional Front-End Developer Portfolio" />
+    <meta property="og:description" content="Showcasing projects and testimonials as a Professional Front-End Developer." />
+    <!-- CSS External -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Untuk kebutuhan tampilan alert (sweetalert) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- Navbar-->
     <nav>
       <div class="container navbar">
         <div class="logo">AchmadZahrul</div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
           <li><a href="#projects" class="margin-navbar">Projects</a></li>
           <li><a href="#testimonials" class="margin-navbar">Testimonial</a></li>
           <li><a href="#contact" class="margin-navbar">Contact Me</a></li>
@@ -30,8 +51,9 @@
             <h2 class="role">Professional Front-End Developer</h2>
             <br />
             <p>
-              I am an enthusiastic fresh graduate from <a href="https://www.upnjatim.ac.id/" class="text-decoration-none upn-color"><b>Universitas Pembangunan Nasional “Veteran” East Java</b></a> with a background in Informatics. My goal is to
-              develop skills and knowledge on my career, while expanding my soft skill and hard skill by joining bootcamps and volunteer events. I hope to contribute to a dynamic and innovative work environment where I can continue to learn and grow.
+              I am an enthusiastic fresh graduate from <a href="https://www.upnjatim.ac.id/" class="text-decoration-none upn-color" target="_blank"><b>Universitas Pembangunan Nasional “Veteran” East Java</b></a> with a background in Informatics. My
+              goal is to develop skills and knowledge on my career, while expanding my soft skill and hard skill by joining bootcamps and volunteer events. I hope to contribute to a dynamic and innovative work environment where I can continue to
+              learn and grow.
             </p>
             <br /><br />
             <div class="social-icons">
@@ -49,7 +71,7 @@
 
           <!-- Photo Profile-->
           <div class="header-image fade-in">
-            <img src="/assets/myprofile.png" alt="Foto Profil" />
+            <img src="/assets/myprofile.png" alt="Photo Profile" />
           </div>
         </div>
       </div>
@@ -137,20 +159,29 @@
       <div class="container">
         <h2 class="center-text">Contact Me</h2>
         <br />
-        <form>
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="text" name="subject" placeholder="Subject" required />
-          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <form id="contactForm">
+          <!-- input nama -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <!-- input subjek -->
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required />
+          <!-- input pesan -->
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
           <button type="submit">Send Message</button>
         </form>
+        <div id="responseMessage"></div>
       </div>
     </section>
 
-    <!-- Footer-->
+    <!-- Footer -->
     <footer>
       <div class="container">
         <p>Developed by Achmad Zahrul Ali Zadan | 2024</p>
       </div>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
