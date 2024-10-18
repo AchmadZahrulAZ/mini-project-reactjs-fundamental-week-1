@@ -295,7 +295,7 @@ footer {
 
   .nav-links {
     position: absolute;
-    top: 60px; 
+    top: 60px;
     right: 20px;
     background-color: #222831;
     flex-direction: column;
@@ -307,7 +307,7 @@ footer {
   }
 
   .nav-links.active {
-    max-height: 500px; 
+    max-height: 500px;
   }
 
   .nav-links li {
